@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap");
+
+.App {
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(207, 130, 22);
+    background: linear-gradient(325deg, rgba(207, 130, 22, 1) 13%, rgba(230, 228, 52, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .todo {
+        width: 500px;
+        height: auto;
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 12px;
+
+        .todoItem {
+            text-align: left;
+            width: 476px;
+            height: auto;
+            box-shadow: 0px 0px 30px rgb(236, 236, 236);
+            margin-top: 10px;
+            padding: 12px;
+
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all ease 0.3s;
+
+            &__title {
+                color: #343434;
+                font-weight: 700;
+                font-size: 21px;
+                width: auto;
+            }
+
+            &__description {
+                margin-top: 10px;
+                max-width: 300px;
+                color: rgb(170, 170, 170);
+            }
+
+            .image-remove {
+                width: 22px;
+                cursor: pointer;
+                margin-right: 15px;
+            }
+
+            .image-complete {
+                width: 27px;
+                cursor: pointer;
+            }
+
+            .image-edit {
+                width: 20px;
+                height: 25px;
+                cursor: pointer;
+                margin-right: 15px;
+            }
+
+            &:hover {
+                box-shadow: 0px 0px 30px rgb(221, 221, 221);
+            }
+
+            .completed {
+                position: relative;
+
+                &:after {
+                    display: block;
+                    position: absolute;
+                    top: 13px;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #6e6e6e;
+                    content: "";
+                }
+            }
+        }
+
+        .bkg-green {
+            background-color: rgb(213, 240, 206);
+        }
+
+        .addTodoItem {
+            width: 496px;
+            height: 80px;
+            border: 2px dashed rgb(53, 53, 53);
+            margin-top: 10px;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            .add-title {
+                font-weight: 600;
+            }
+
+            .add-image {
+                .image {
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+
+            &:hover {
+                border-color: rgba(207, 130, 22, 1);
+
+                .add-title {
+                    color: rgba(207, 130, 22, 1);
+                }
+
+                .add-image {
+                    .image * {
+                        fill: rgba(207, 130, 22, 1);
+                    }
+                }
+            }
+        }
+
+        .create-item {
+            width: 476px;
+            height: auto;
+            box-shadow: 0px 0px 30px rgb(224, 224, 224);
+            margin-top: 10px;
+            padding: 12px;
+            border-radius: 9px;
+            transition: box-shadow ease 0.3s;
+
+            display: flex;
+            justify-content: space-between;
+
+            .create-item__info {
+                display: flex;
+                flex-direction: column;
+                width: 70%;
+
+                .input {
+                    color: #343434;
+                    padding: 8px 16px;
+                    font-size: 18px;
+                    border: none;
+                    border-bottom: 1px solid rgb(219, 219, 219);
+                    outline: none;
+                }
+
+                .title {
+                    font-weight: 700;
+                    font-size: 30px;
+                }
+
+                .description {
+                    margin-top: 15px;
+                }
+            }
+
+            .create-item__addBtn {
+                position: relative;
+
+                .button {
+                    position: absolute;
+                    bottom: 0;
+                    left: -125px;
+
+                    cursor: pointer;
+
+                    border: none;
+                    padding: 10px 25px;
+                    color: #fff;
+                    border-radius: 8px;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+
+                .enabled {
+                    background: rgb(90, 80, 230);
+                    border-bottom: 4px solid rgb(62, 55, 155);
+                }
+
+                .disabled {
+                    background-color: rgb(172, 172, 172);
+                    border-bottom: 4px solid rgb(109, 109, 109);
+                    cursor: default;
+                }
+            }
+        }
+
+        .noTodoItem {
+            padding: 20px;
+
+            &__title {
+                margin-top: 20px;
+                font-size: 20px;
+            }
+        }
+    }
+}
